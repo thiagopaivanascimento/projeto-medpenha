@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8"  ?>
+<!-- Created with iReport - A designer for JasperReports -->
+<!DOCTYPE jasperReport PUBLIC "//JasperReports//DTD Report Design//EN" "http://jasperreports.sourceforge.net/dtds/jasperreport.dtd">
+<jasperReport
+		 name="Carteirinha"
+		 columnCount="1"
+		 printOrder="Vertical"
+		 orientation="Portrait"
+		 pageWidth="595"
+		 pageHeight="842"
+		 columnWidth="535"
+		 columnSpacing="0"
+		 leftMargin="30"
+		 rightMargin="30"
+		 topMargin="20"
+		 bottomMargin="20"
+		 whenNoDataType="NoPages"
+		 isTitleNewPage="false"
+		 isSummaryNewPage="false">
+	<property name="ireport.scriptlethandling" value="0" />
+	<property name="ireport.encoding" value="UTF-8" />
+	<import value="java.util.*" />
+	<import value="net.sf.jasperreports.engine.*" />
+	<import value="net.sf.jasperreports.engine.data.*" />
+
+
+	<field name="convenio" class="java.lang.String">
+		<fieldDescription><![CDATA[convenio]]></fieldDescription>
+	</field>
+	<field name="matricula" class="java.lang.String">
+		<fieldDescription><![CDATA[matricula]]></fieldDescription>
+	</field>
+	<field name="nasc" class="java.lang.String">
+		<fieldDescription><![CDATA[nasc]]></fieldDescription>
+	</field>
+	<field name="nomePac" class="java.lang.String">
+		<fieldDescription><![CDATA[nomePac]]></fieldDescription>
+	</field>
+	<field name="titular" class="java.lang.String">
+		<fieldDescription><![CDATA[titular]]></fieldDescription>
+	</field>
+
+		<background>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</background>
+		<title>
+			<band height="18"  isSplitAllowed="true" >
+			</band>
+		</title>
+		<pageHeader>
+			<band height="21"  isSplitAllowed="true" >
+			</band>
+		</pageHeader>
+		<columnHeader>
+			<band height="13"  isSplitAllowed="true" >
+			</band>
+		</columnHeader>
+		<detail>
+			<band height="271"  isSplitAllowed="true" >
+				<elementGroup><!--  Start: 1 !-->
+				<elementGroup><!--  Start: 1.2 !-->
+				<elementGroup><!--  Start: 2.3 !-->
+				<rectangle>
+					<reportElement
+						x="16"
+						y="7"
+						width="381"
+						height="198"
+						forecolor="#003300"
+						backcolor="#FFFFFF"
+						key="rectangle-1"/>
+					<graphicElement stretchType="NoStretch">
+					<pen lineWidth="2.0" lineStyle="Double"/>
+</graphicElement>
+				</rectangle>
+				</elementGroup><!-- End 1.2.3 !-->
+				</elementGroup><!-- End 1.2 !-->
+				</elementGroup><!-- End 1 !-->
+				<staticText>
+					<reportElement
+						x="23"
+						y="53"
+						width="45"
+						height="21"
+						key="staticText-2"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<text><![CDATA[Nome:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="23"
+						y="73"
+						width="61"
+						height="22"
+						key="staticText-3"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<text><![CDATA[Matricula:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="23"
+						y="95"
+						width="105"
+						height="20"
+						key="staticText-4"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<text><![CDATA[Data de nascimento:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="23"
+						y="114"
+						width="114"
+						height="20"
+						key="staticText-5"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<text><![CDATA[Nome do responsável:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="23"
+						y="134"
+						width="61"
+						height="19"
+						key="staticText-6"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<text><![CDATA[Convenio:]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="76"
+						y="53"
+						width="218"
+						height="21"
+						key="textField-1"
+						stretchType="RelativeToBandHeight"/>
+					<box></box>
+					<textElement>
+						<font size="9"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{nomePac}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="88"
+						y="73"
+						width="206"
+						height="23"
+						key="textField-2"
+						stretchType="RelativeToBandHeight"/>
+					<box></box>
+					<textElement>
+						<font size="9"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{matricula}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="137"
+						y="95"
+						width="157"
+						height="20"
+						key="textField-3"
+						stretchType="RelativeToBandHeight"/>
+					<box></box>
+					<textElement>
+						<font size="9"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{nasc}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="141"
+						y="114"
+						width="149"
+						height="22"
+						key="textField-4"
+						stretchType="RelativeToBandHeight"/>
+					<box></box>
+					<textElement>
+						<font size="9"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{titular}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="86"
+						y="134"
+						width="200"
+						height="20"
+						key="textField-5"
+						stretchType="RelativeToBandHeight"/>
+					<box></box>
+					<textElement>
+						<font size="9"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{convenio}]]></textFieldExpression>
+				</textField>
+				<image  evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="258"
+						y="22"
+						width="121"
+						height="141"
+						key="image-3"/>
+					<box></box>
+					<graphicElement stretchType="NoStretch"/>
+					<imageExpression class="java.lang.String"><![CDATA["F:\\PROJETOS\\MEDPENHA\\Programa\\MEDPENHA\\webcam\\foto\\00.jpg"]]></imageExpression>
+				</image>
+				<staticText>
+					<reportElement
+						x="42"
+						y="168"
+						width="355"
+						height="20"
+						forecolor="#003300"
+						key="staticText-7"/>
+					<box></box>
+					<textElement textAlignment="Center">
+						<font pdfFontName="Helvetica-Bold" size="10" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Clinica Médica  -  Médicos da Penha, Rua Panamá 320 - Penha. ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="108"
+						y="187"
+						width="205"
+						height="13"
+						forecolor="#003300"
+						key="staticText-8"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="10" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Telefone: (21) 3350 - 8907 / 3350 - 6767]]></text>
+				</staticText>
+				<line direction="TopDown">
+					<reportElement
+						x="47"
+						y="163"
+						width="342"
+						height="1"
+						forecolor="#003300"
+						key="line-1"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+				<staticText>
+					<reportElement
+						x="90"
+						y="17"
+						width="40"
+						height="33"
+						forecolor="#009933"
+						key="staticText-9"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial Rounded MT Bold" pdfFontName="Helvetica-Bold" size="24" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Me]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="129"
+						y="0"
+						width="50"
+						height="53"
+						forecolor="#009933"
+						key="staticText-10"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial Black" size="36"/>
+					</textElement>
+				<text><![CDATA[dp]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="179"
+						y="17"
+						width="102"
+						height="33"
+						forecolor="#009933"
+						key="staticText-11"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial Rounded MT Bold" pdfFontName="Helvetica-Bold" size="24" isBold="true"/>
+					</textElement>
+				<text><![CDATA[enha]]></text>
+				</staticText>
+			</band>
+		</detail>
+		<columnFooter>
+			<band height="109"  isSplitAllowed="true" >
+			</band>
+		</columnFooter>
+		<pageFooter>
+			<band height="50"  isSplitAllowed="true" >
+			</band>
+		</pageFooter>
+		<lastPageFooter>
+			<band height="50"  isSplitAllowed="true" >
+			</band>
+		</lastPageFooter>
+		<summary>
+			<band height="50"  isSplitAllowed="true" >
+			</band>
+		</summary>
+</jasperReport>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<!DOCTYPE toc
+  PUBLIC "-//Sun Microsystems Inc.//DTD JavaHelp TOC Version 1.0//EN"
+         "http://java.sun.com/products/javahelp/toc_1_0.dtd">
+
+<toc version="1.0">
+	<tocitem text="Início" target="Introducao"/>	
+	<tocitem text="Cadastros">
+		<tocitem text="Usuário" target="usuario"/>
+		<tocitem text="Médico" target="medico"/>
+		<tocitem text="Convênio" target="convenio"/>
+	</tocitem>
+	<tocitem text="Lista">
+		<tocitem text="Lista de Pacientes" target="listapaciente"/>
+	</tocitem>
+	<tocitem text="Preço">
+		<tocitem text="Preço" target="precoconsulta"/>
+	</tocitem>
+	<tocitem text="Relatórios">
+		<tocitem text="Relatório estatístico por pagamento convênio" target="relpagamentoconvenio"/>
+		<tocitem text="Relatório estatístico por pagamento particular" target="relpagamentoparticular"/>
+		<tocitem text="Relatório estatístico por consulta cancelada" target="relconsultacancelada"/>
+		<tocitem text="Relatório de arrecadação por empresa convêniada" target="relempresaconveniada"/>
+	</tocitem>
+	<tocitem text="Backup">
+		<tocitem text="Realizar Backup" target="realizarbackup"/>
+		<tocitem text="Restaurar Backup" target="restaurarbackup"/>
+	</tocitem>
+	<tocitem text="Sair">
+		<tocitem text="Efetuar Logoff" target="logoff"/>
+	</tocitem>
+	
+</toc>

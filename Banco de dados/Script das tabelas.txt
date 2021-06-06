@@ -1,0 +1,406 @@
+
+SCRIPT DAS TABELAS
+
+
+  
+CREATE TABLE anamnese
+(
+  nome character varying(50) NOT NULL,
+  matricula integer NOT NULL,
+  data character varying(10) NOT NULL,
+  profissao character varying(30) NOT NULL,
+  sexo character varying(10) NOT NULL,
+  raca character varying(20) NOT NULL,
+  religiao character varying(30) NOT NULL,
+  datanasc character varying(10) NOT NULL,
+  pratesporte character varying(120) NOT NULL,
+  doencas character varying(120) NOT NULL,
+  medicamentos character varying(120) NOT NULL,
+  doencafamilia character varying(120) NOT NULL,
+  alergia character varying(120) NOT NULL,
+  etilista character varying(10) NOT NULL,
+  qtdetilismo character varying(10),
+  tabagista character varying(10) NOT NULL,
+  qtdcigarros integer,
+  peso double precision NOT NULL,
+  altura double precision NOT NULL,
+  imc double precision NOT NULL,
+  tiposanguineo character varying(10) NOT NULL,
+  pressao character varying(10) NOT NULL,
+  freqcardiaca integer NOT NULL,
+  codanamnese integer NOT NULL DEFAULT nextval('codanamnese'::regclass),
+  CONSTRAINT "codigo da anamnese" PRIMARY KEY (codanamnese),
+  CONSTRAINT "paciente para anamnese" FOREIGN KEY (matricula)
+      REFERENCES paciente (matricula) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION
+) 
+WITHOUT OIDS;
+ALTER TABLE anamnese OWNER TO postgres;
+
+
+
+
+CREATE TABLE atestado
+(
+  codatestado integer NOT NULL DEFAULT nextval('codatestado'::regclass),
+  data character varying(10) NOT NULL,
+  hora character varying(14) NOT NULL,
+  descricao character varying(500) NOT NULL,
+  obs character varying(500),
+  numprontuario integer NOT NULL,
+  CONSTRAINT "codigo do atestado" PRIMARY KEY (codatestado),
+  CONSTRAINT "prontuario para atestado" FOREIGN KEY (numprontuario)
+      REFERENCES prontuario (numeroprontuario) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION
+) 
+WITHOUT OIDS;
+ALTER TABLE atestado OWNER TO postgres;
+
+
+
+
+
+CREATE TABLE cartao
+(
+  codcartao integer NOT NULL DEFAULT nextval('codcartao'::regclass),
+  numcartao character varying(30) NOT NULL,
+  codpagamentoparticular integer NOT NULL,
+  CONSTRAINT "codigo do cartao" PRIMARY KEY (codcartao),
+  CONSTRAINT "pagamento particular para cartao" FOREIGN KEY (codpagamentoparticular)
+      REFERENCES pagamentoparticular (codpagamentoparticular) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION
+) 
+WITHOUT OIDS;
+ALTER TABLE cartao OWNER TO postgres;
+
+
+
+
+CREATE TABLE cheque
+(
+  codcheque integer NOT NULL DEFAULT nextval('codcheque'::regclass),
+  agenda character varying(30) NOT NULL,
+  numconta character varying(30) NOT NULL,
+  numserie character varying(30) NOT NULL,
+  nomebanco character varying(30) NOT NULL,
+  numcheque character varying(30) NOT NULL,
+  codpagamentoparticular integer NOT NULL,
+  CONSTRAINT "codigo do cheque" PRIMARY KEY (codcheque),
+  CONSTRAINT "pagamento particular para cheque" FOREIGN KEY (codpagamentoparticular)
+      REFERENCES pagamentoparticular (codpagamentoparticular) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION
+) 
+WITHOUT OIDS;
+ALTER TABLE cheque OWNER TO postgres;
+
+
+
+
+CREATE TABLE consulta
+(
+  codconsulta integer NOT NULL DEFAULT nextval('codconsulta'::regclass),
+  hora character varying(20) NOT NULL,
+  data character varying(10) NOT NULL,
+  status character varying(20) NOT NULL,
+  situacao character varying(20) NOT NULL,
+  codpaciente integer NOT NULL,
+  codmedico character varying(15) NOT NULL,
+  codtipoconsulta integer NOT NULL,
+  CONSTRAINT "codigo da consulta" PRIMARY KEY (codconsulta),
+  CONSTRAINT "medico para consulta" FOREIGN KEY (codmedico)
+      REFERENCES medico (crm) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION,
+  CONSTRAINT "paciente para consulta" FOREIGN KEY (codpaciente)
+      REFERENCES paciente (matricula) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION,
+  CONSTRAINT "tipo consulta para consulta" FOREIGN KEY (codtipoconsulta)
+      REFERENCES tipoconsulta (codtipoconsulta) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION
+) 
+WITHOUT OIDS;
+ALTER TABLE consulta OWNER TO postgres;
+
+
+
+
+CREATE TABLE convenio
+(
+  cnpj character varying(20) NOT NULL,
+  razao character varying(50) NOT NULL,
+  instituicao character varying(50) NOT NULL,
+  percentual integer NOT NULL,
+  email character varying(30) NOT NULL,
+  telefone character varying(20) NOT NULL,
+  fax character varying(20) NOT NULL,
+  endereco character varying(60) NOT NULL,
+  numero character varying(10) NOT NULL,
+  bairro character varying(30) NOT NULL,
+  complemento character varying(35),
+  cidade character varying(30) NOT NULL,
+  cep character varying(15) NOT NULL,
+  uf character varying(20) NOT NULL,
+  CONSTRAINT "codigo do convenio" PRIMARY KEY (cnpj)
+) 
+WITHOUT OIDS;
+ALTER TABLE convenio OWNER TO postgres;
+
+
+
+
+CREATE TABLE diagnostico
+(
+  coddiagnostico integer NOT NULL DEFAULT nextval('coddiagnostico'::regclass),
+  data character varying(10) NOT NULL,
+  hora character varying(14) NOT NULL,
+  entrevistaconsulta character varying(500) NOT NULL,
+  obs character varying(500),
+  diagnostico character varying(60) NOT NULL,
+  numprontuario integer NOT NULL,
+  CONSTRAINT "codigo do diagnostico" PRIMARY KEY (coddiagnostico),
+  CONSTRAINT "prontuario para diagnostico" FOREIGN KEY (numprontuario)
+      REFERENCES prontuario (numeroprontuario) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION
+) 
+WITHOUT OIDS;
+ALTER TABLE diagnostico OWNER TO postgres;
+
+
+
+
+CREATE TABLE exame
+(
+  codexame integer NOT NULL DEFAULT nextval('codexame'::regclass),
+  data character varying(10) NOT NULL,
+  hora character varying(14) NOT NULL,
+  exame character varying(500) NOT NULL,
+  obs character varying(500),
+  numprontuario integer NOT NULL,
+  CONSTRAINT "codigo do exame" PRIMARY KEY (codexame),
+  CONSTRAINT "prontuario para exame" FOREIGN KEY (numprontuario)
+      REFERENCES prontuario (numeroprontuario) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION
+) 
+WITHOUT OIDS;
+ALTER TABLE exame OWNER TO postgres;
+
+
+
+
+CREATE TABLE laudopericial
+(
+  codlaudo integer NOT NULL DEFAULT nextval('codlaudo'::regclass),
+  data character varying(10) NOT NULL,
+  hora character varying(10) NOT NULL,
+  descricao character varying(500) NOT NULL,
+  obs character varying(500),
+  numprontuario integer NOT NULL,
+  CONSTRAINT "codigo do laudo" PRIMARY KEY (codlaudo),
+  CONSTRAINT "prontuario para laudopericial" FOREIGN KEY (numprontuario)
+      REFERENCES prontuario (numeroprontuario) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION
+) 
+WITHOUT OIDS;
+ALTER TABLE laudopericial OWNER TO postgres;
+
+
+
+
+CREATE TABLE medico
+(
+  nome character varying(50) NOT NULL,
+  datanasc character varying(10) NOT NULL,
+  cpf character varying(15) NOT NULL,
+  rg character varying(15) NOT NULL,
+  telefone character varying(20) NOT NULL,
+  celular character varying(20),
+  email character varying(30),
+  crm character varying(15) NOT NULL,
+  especialidade character varying(40) NOT NULL,
+  CONSTRAINT "codigo do medico" PRIMARY KEY (crm),
+  CONSTRAINT "usuario para medico" FOREIGN KEY (cpf)
+      REFERENCES usuario (cpf) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION
+) 
+WITHOUT OIDS;
+ALTER TABLE medico OWNER TO postgres;
+
+
+
+
+CREATE TABLE paciente
+(
+  matricula integer NOT NULL,
+  nome character varying(50) NOT NULL,
+  datanasc character varying(10) NOT NULL,
+  sexo character varying(10) NOT NULL,
+  endereco character varying(60) NOT NULL,
+  numero character varying(10) NOT NULL,
+  complemento character varying(35),
+  bairro character varying(30) NOT NULL,
+  cep character varying(15) NOT NULL,
+  cidade character varying(30) NOT NULL,
+  uf character varying(20) NOT NULL,
+  convenio character varying(10) NOT NULL,
+  operaconvenio character varying(50),
+  codconvenio character varying(20),
+  CONSTRAINT "codigo do paciente" PRIMARY KEY (matricula),
+  CONSTRAINT "convenio para paciente" FOREIGN KEY (codconvenio)
+      REFERENCES convenio (cnpj) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION
+) 
+WITHOUT OIDS;
+ALTER TABLE paciente OWNER TO postgres;
+
+
+
+CREATE TABLE pacienteadulto
+(
+  codpacienteadulto integer NOT NULL DEFAULT nextval('codpacienteadulto'::regclass),
+  telefone character varying(20) NOT NULL,
+  celular character varying(20),
+  cpf character varying(15) NOT NULL,
+  rg character varying(15) NOT NULL,
+  estadocivil character varying(15) NOT NULL,
+  matpaciente integer NOT NULL,
+  CONSTRAINT "codigo do paciente adulto" PRIMARY KEY (codpacienteadulto),
+  CONSTRAINT "paciente para pacienteadulto" FOREIGN KEY (matpaciente)
+      REFERENCES paciente (matricula) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION
+) 
+WITHOUT OIDS;
+ALTER TABLE pacienteadulto OWNER TO postgres;
+
+
+
+
+CREATE TABLE pacientecrianca
+(
+  codpacientecrianca integer NOT NULL DEFAULT nextval('codpacientecrianca'::regclass),
+  nomeresp character varying(50) NOT NULL,
+  datanascresp character varying(10) NOT NULL,
+  telefoneresp character varying(20) NOT NULL,
+  celularresp character varying(20),
+  cpfresp character varying(15) NOT NULL,
+  rgresp character varying(15) NOT NULL,
+  matpaciente integer NOT NULL,
+  CONSTRAINT "codigo paciente crianca" PRIMARY KEY (codpacientecrianca),
+  CONSTRAINT "paciente para pacientecrianca" FOREIGN KEY (matpaciente)
+      REFERENCES paciente (matricula) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION
+) 
+WITHOUT OIDS;
+ALTER TABLE pacientecrianca OWNER TO postgres;
+
+
+
+
+CREATE TABLE pagamento
+(
+  codpagamento integer NOT NULL DEFAULT nextval('codpagamento'::regclass),
+  data character varying(10) NOT NULL,
+  tipo character varying(20) NOT NULL,
+  total double precision NOT NULL,
+  obs character varying(500),
+  codcosulta integer NOT NULL,
+  CONSTRAINT "codigo do pagamento" PRIMARY KEY (codpagamento),
+  CONSTRAINT "consulta para pagamento" FOREIGN KEY (codcosulta)
+      REFERENCES consulta (codconsulta) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION
+) 
+WITHOUT OIDS;
+ALTER TABLE pagamento OWNER TO postgres;
+
+
+
+
+CREATE TABLE pagamentoconvenio
+(
+  codpagamentoconvenio integer NOT NULL DEFAULT nextval('codpagamentoconvenio'::regclass),
+  cnpj character varying(20) NOT NULL,
+  convenio character varying(50) NOT NULL,
+  codpagamento integer NOT NULL,
+  CONSTRAINT "codigo do pagamento convenio" PRIMARY KEY (codpagamentoconvenio),
+  CONSTRAINT "pagamento para pagamento convenio" FOREIGN KEY (codpagamento)
+      REFERENCES pagamento (codpagamento) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION
+) 
+WITHOUT OIDS;
+ALTER TABLE pagamentoconvenio OWNER TO postgres;
+
+
+
+
+CREATE TABLE pagamentoparticular
+(
+  codpagamentoparticular integer NOT NULL DEFAULT nextval('codpagamentoparticular'::regclass),
+  formapagamento character varying(10) NOT NULL,
+  codpagamento integer NOT NULL,
+  CONSTRAINT "codigo do pagamento particular" PRIMARY KEY (codpagamentoparticular),
+  CONSTRAINT "pagamento para pagamento particular" FOREIGN KEY (codpagamento)
+      REFERENCES pagamento (codpagamento) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION
+) 
+WITHOUT OIDS;
+ALTER TABLE pagamentoparticular OWNER TO postgres;
+
+
+
+CREATE TABLE prescricao
+(
+  codprescricao integer NOT NULL DEFAULT nextval('codprescricao'::regclass),
+  data character varying(10) NOT NULL, 
+  hora character varying(14) NOT NULL,
+  tipo character varying(20) NOT NULL,
+  medicamentos character varying(500) NOT NULL,
+  obs character varying(500),
+  numprontuario integer NOT NULL,
+  CONSTRAINT "codigo da prescricao" PRIMARY KEY (codprescricao),
+  CONSTRAINT "prontuario para prescricao" FOREIGN KEY (numprontuario)
+      REFERENCES prontuario (numeroprontuario) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION
+) 
+WITHOUT OIDS;
+ALTER TABLE prescricao OWNER TO postgres;
+
+
+
+
+CREATE TABLE prontuario
+(
+  numeroprontuario integer NOT NULL DEFAULT nextval('numeroprontuario'::regclass),
+  datainicial character varying(10) NOT NULL,
+  matpaciente integer NOT NULL,
+  CONSTRAINT "codigo do prontuario" PRIMARY KEY (numeroprontuario),
+  CONSTRAINT "paciente para prontuario" FOREIGN KEY (matpaciente)
+      REFERENCES paciente (matricula) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION
+) 
+WITHOUT OIDS;
+ALTER TABLE prontuario OWNER TO postgres;
+
+
+              
+
+CREATE TABLE tipoconsulta
+(
+  codtipoconsulta integer NOT NULL DEFAULT nextval('codtipoconsulta'::regclass),
+  tipo character varying(20) NOT NULL,
+  valor double precision NOT NULL,
+  CONSTRAINT "codigo do tipo consulta" PRIMARY KEY (codtipoconsulta)
+) 
+WITHOUT OIDS;
+ALTER TABLE tipoconsulta OWNER TO postgres;
+
+
+             
+CREATE TABLE usuario
+(
+  "login" character varying(15) NOT NULL,
+  senha character varying(40) NOT NULL,
+  cpf character varying(15) NOT NULL,
+  tipo character varying(30) NOT NULL,
+  CONSTRAINT "codigo do usuario" PRIMARY KEY (cpf)
+) 
+WITHOUT OIDS;
+ALTER TABLE usuario OWNER TO postgres;
+

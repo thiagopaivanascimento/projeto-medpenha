@@ -1,0 +1,14 @@
+#Fat Jar Configuration File
+#Fri Dec 26 21:16:32 BRST 2008
+onejar.license.required=true
+manifest.classpath=
+manifest.removesigners=true
+onejar.checkbox=false
+jarname=MEDPENHA.jar
+manifest.mergeall=true
+manifest.mainclass=menuprincipal.TestaMenuPrincipal
+manifest.file=<createnew>
+jarname.isextern=false
+onejar.expand=
+excludes=
+includes=<inc|MEDPENHA/ajuda>;<inc|MEDPENHA/anamnese>;<inc|MEDPENHA/consulta>;<inc|MEDPENHA/convenio>;<inc|MEDPENHA/criptografia>;<inc|MEDPENHA/dao>;<inc|MEDPENHA/helpADM>;<inc|MEDPENHA/helpENF>;<inc|MEDPENHA/helpMED>;<inc|MEDPENHA/helpPrincipal>;<inc|MEDPENHA/helpSEC>;<inc|MEDPENHA/imagens>;<inc|MEDPENHA/lib>;<inc|MEDPENHA/medico>;<inc|MEDPENHA/menuadm>;<inc|MEDPENHA/menuenfermeira>;<inc|MEDPENHA/menumedico>;<inc|MEDPENHA/menuprincipal>;<inc|MEDPENHA/menusecretaria>;<inc|MEDPENHA/paciente>;<inc|MEDPENHA/prontuario>;<inc|MEDPENHA/pagamento>;<inc|MEDPENHA/relatorios>;<inc|MEDPENHA/tipoconsulta>;<inc|MEDPENHA/usuario>;<inc|MEDPENHA/webcam>

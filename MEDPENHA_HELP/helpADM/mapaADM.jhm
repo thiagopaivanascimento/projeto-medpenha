@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='ISO-8859-1' ?>
+<!DOCTYPE map
+  PUBLIC "-//Sun Microsystems Inc.//DTD JavaHelp Map Version 1.0//EN"
+         "http://java.sun.com/products/javahelp/map_1_0.dtd">
+		 
+<map version="1.0">
+	<mapID target="Introducao" url="html/introducao.html"/>
+	<mapID target="realizarbackup" url="html/Backup/realizarbackup.html"/>
+	<mapID target="restaurarbackup" url="html/Backup/restaurarbackup.html"/>
+	<mapID target="convenio" url="html/Cadastro/convenio.html"/>
+	<mapID target="medico" url="html/Cadastro/medico.html"/>
+	<mapID target="usuario" url="html/Cadastro/usuario.html"/>
+	<mapID target="relconsultacancelada" url="html/Relatórios/relconsultacancelada.html"/>
+	<mapID target="relconsultaremarcada" url="html/Relatórios/relconsultaremarcada.html"/>
+	<mapID target="relempresaconveniada" url="html/Relatórios/relempresaconveniada.html"/>
+	<mapID target="relpagamentoconvenio" url="html/Relatórios/relpagamentoconvenio.html"/>
+	<mapID target="relpagamentoparticular" url="html/Relatórios/relpagamentoparticular.html"/>
+	<mapID target="logoff" url="html/Sair/logoff.html"/>
+</map>

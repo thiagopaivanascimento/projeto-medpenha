@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="UTF-8"  ?>
+<!-- Created with iReport - A designer for JasperReports -->
+<!DOCTYPE jasperReport PUBLIC "//JasperReports//DTD Report Design//EN" "http://jasperreports.sourceforge.net/dtds/jasperreport.dtd">
+<jasperReport
+		 name="Autorizacao"
+		 columnCount="1"
+		 printOrder="Vertical"
+		 orientation="Portrait"
+		 pageWidth="595"
+		 pageHeight="842"
+		 columnWidth="535"
+		 columnSpacing="0"
+		 leftMargin="30"
+		 rightMargin="30"
+		 topMargin="20"
+		 bottomMargin="20"
+		 whenNoDataType="NoPages"
+		 isTitleNewPage="false"
+		 isSummaryNewPage="false">
+	<property name="ireport.scriptlethandling" value="0" />
+	<property name="ireport.encoding" value="UTF-8" />
+	<import value="java.util.*" />
+	<import value="net.sf.jasperreports.engine.*" />
+	<import value="net.sf.jasperreports.engine.data.*" />
+
+
+	<field name="datacons" class="java.lang.String">
+		<fieldDescription><![CDATA[datacons]]></fieldDescription>
+	</field>
+	<field name="especialidade" class="java.lang.String">
+		<fieldDescription><![CDATA[especialidade]]></fieldDescription>
+	</field>
+	<field name="horacons" class="java.lang.String">
+		<fieldDescription><![CDATA[horacons]]></fieldDescription>
+	</field>
+	<field name="matricula" class="java.lang.String">
+		<fieldDescription><![CDATA[matricula]]></fieldDescription>
+	</field>
+	<field name="nomeMedico" class="java.lang.String">
+		<fieldDescription><![CDATA[nomeMedico]]></fieldDescription>
+	</field>
+	<field name="nomePac" class="java.lang.String">
+		<fieldDescription><![CDATA[nomePac]]></fieldDescription>
+	</field>
+
+		<background>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</background>
+		<title>
+			<band height="69"  isSplitAllowed="true" >
+				<staticText>
+					<reportElement
+						x="174"
+						y="15"
+						width="57"
+						height="53"
+						forecolor="#009933"
+						key="staticText-11"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial Rounded MT Bold" pdfFontName="Helvetica-Bold" size="36" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Me]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="231"
+						y="-1"
+						width="71"
+						height="69"
+						forecolor="#009933"
+						key="staticText-12"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial Black" size="48"/>
+					</textElement>
+				<text><![CDATA[dp]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="296"
+						y="15"
+						width="102"
+						height="53"
+						forecolor="#009933"
+						key="staticText-13"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial Rounded MT Bold" pdfFontName="Helvetica-Bold" size="36" isBold="true"/>
+					</textElement>
+				<text><![CDATA[enha]]></text>
+				</staticText>
+			</band>
+		</title>
+		<pageHeader>
+			<band height="13"  isSplitAllowed="true" >
+			</band>
+		</pageHeader>
+		<columnHeader>
+			<band height="52"  isSplitAllowed="true" >
+				<staticText>
+					<reportElement
+						x="123"
+						y="1"
+						width="280"
+						height="43"
+						forecolor="#003300"
+						key="staticText-8"/>
+					<box></box>
+					<textElement textAlignment="Center">
+						<font pdfFontName="Helvetica-Bold" size="24" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Autorização de retorno]]></text>
+				</staticText>
+			</band>
+		</columnHeader>
+		<detail>
+			<band height="301"  isSplitAllowed="true" >
+				<staticText>
+					<reportElement
+						x="0"
+						y="7"
+						width="93"
+						height="16"
+						forecolor="#003300"
+						key="staticText-2"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Data da consulta:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="0"
+						y="32"
+						width="92"
+						height="18"
+						forecolor="#003300"
+						key="staticText-3"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Hora da consulta:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="10"
+						y="171"
+						width="515"
+						height="86"
+						key="staticText-4"/>
+					<box></box>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+				<text><![CDATA[           Autorizo o (a) paciente acima  marcar uma consulta de retorno no prazo máximo de 15 dias, a partir da data de consulta. Caso o prazo vença, a consulta será caracterizada como uma nova consulta, cabendo ao autorizado arcar com seu custo.]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="96"
+						y="7"
+						width="108"
+						height="17"
+						key="textField-1"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{datacons}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="93"
+						y="32"
+						width="111"
+						height="17"
+						key="textField-2"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{horacons}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="0"
+						y="55"
+						width="57"
+						height="18"
+						forecolor="#003300"
+						key="staticText-5"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Paciente:]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="60"
+						y="55"
+						width="465"
+						height="21"
+						key="textField-3"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{nomePac}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="0"
+						y="82"
+						width="48"
+						height="17"
+						forecolor="#003300"
+						key="staticText-6"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Médico:]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="51"
+						y="81"
+						width="474"
+						height="20"
+						key="textField-4"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{nomeMedico}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="-1"
+						y="111"
+						width="38"
+						height="18"
+						forecolor="#003300"
+						key="staticText-9"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" isBold="true"/>
+					</textElement>
+				<text><![CDATA[CRM:]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="45"
+						y="111"
+						width="441"
+						height="20"
+						key="textField-5"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{especialidade}]]></textFieldExpression>
+				</textField>
+			</band>
+		</detail>
+		<columnFooter>
+			<band height="211"  isSplitAllowed="true" >
+				<line direction="TopDown">
+					<reportElement
+						x="235"
+						y="62"
+						width="290"
+						height="1"
+						forecolor="#003300"
+						key="line-1"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+				<staticText>
+					<reportElement
+						x="-1"
+						y="146"
+						width="535"
+						height="20"
+						forecolor="#003300"
+						key="staticText-1"/>
+					<box></box>
+					<textElement textAlignment="Center">
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Clinica Médica  -  Médicos da Penha, Rua Panamá 320 - Penha. ]]></text>
+				</staticText>
+				<line direction="TopDown">
+					<reportElement
+						x="20"
+						y="138"
+						width="502"
+						height="1"
+						forecolor="#003300"
+						key="line-2"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+				<staticText>
+					<reportElement
+						x="16"
+						y="177"
+						width="506"
+						height="34"
+						forecolor="#003300"
+						key="staticText-7"/>
+					<box></box>
+					<textElement textAlignment="Center">
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[QUERIDO PACIENTE, FAVOR APRESENTAR ESTE DOCUMENTO NA SUA PRÓXIMA CONSULTA, OBRIGADA.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="5"
+						y="3"
+						width="75"
+						height="19"
+						key="staticText-10"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<text><![CDATA[Rio de Janeiro, ]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="80"
+						y="3"
+						width="72"
+						height="22"
+						key="textField-6"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{datacons}]]></textFieldExpression>
+				</textField>
+			</band>
+		</columnFooter>
+		<pageFooter>
+			<band height="50"  isSplitAllowed="true" >
+			</band>
+		</pageFooter>
+		<lastPageFooter>
+			<band height="50"  isSplitAllowed="true" >
+			</band>
+		</lastPageFooter>
+		<summary>
+			<band height="50"  isSplitAllowed="true" >
+			</band>
+		</summary>
+</jasperReport>

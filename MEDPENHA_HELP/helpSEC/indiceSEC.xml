@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<index version="1.0">
+	<indexitem text="Início" target="Introducao"/>
+	
+	<indexitem text="Cadastro">
+		<indexitem text="Crianças (0 à 17 anos)" target="pacienteadulto"/>
+		<indexitem text="Adultos (acima de 17 anos)" target="pacientecrianca"/>
+	</indexitem>
+
+	<indexitem text="Carteirinha">
+		<indexitem text="Emitir Carteirinha" target="emitircarteirinha"/>
+	</indexitem>
+
+	<indexitem text="Consulta">
+		<indexitem text="Gerenciar Consultas" target="gerenciarconsultas"/>
+	</indexitem>
+
+	<indexitem text="Pagamento">
+		<indexitem text="Efetuar pagamento" target="efetuarpagamento"/>
+	</indexitem>
+
+	<indexitem text="Sair">
+		<indexitem text="Efetuar Logoff" target="logoff"/>
+	</indexitem>
+	
+</index>

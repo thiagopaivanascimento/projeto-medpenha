@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<index version="1.0">
+	<indexitem text="Início" target="Introducao"/>
+	<indexitem text="Login">
+		<indexitem text="Efetuar Login" target="login"/>
+	</indexitem>
+	<indexitem text="Sair">
+		<indexitem text="Efetuar Logoff" target="logoff"/>
+	</indexitem>
+		
+</index>

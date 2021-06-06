@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<index version="1.0">
+	<indexitem text="Início" target="Introducao"/>
+	
+	<indexitem text="Cadastros">
+		<indexitem text="Usuário" target="usuario"/>
+		<indexitem text="Médico" target="medico"/>
+		<indexitem text="Convênio" target="convenio"/>
+	</indexitem>
+                 <indexitem text="Lista">
+		<indexitem text="Lista de Pacientes" target="listapaciente"/>
+	</indexitem>
+	<indexitem text="Preço">
+		<indexitem text="Preço" target="precoconsulta"/>
+	</indexitem>
+	<indexitem text="Relatórios">
+		<indexitem text="Relatório estatístico por pagamento convênio" target="relpagamentoconvenio"/>
+		<indexitem text="Relatório estatístico por pagamento particular" target="relpagamentoparticular"/>
+		<indexitem text="Relatório estatístico por consulta cancelada" target="relconsultacancelada"/>
+		<indexitem text="Relatório de arrecadação por empresa convêniada" target="relempresaconveniada"/>
+	</indexitem>
+	<indexitem text="Backup">
+		<indexitem text="Realizar Backup" target="realizarbackup"/>
+		<indexitem text="Restaurar Backup" target="restaurarbackup"/>
+	<indexitem text="Sair">
+		<indexitem text="Efetuar Logoff" target="logoff"/>
+	</indexitem>
+
+</index>

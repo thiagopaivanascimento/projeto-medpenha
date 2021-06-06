@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<!DOCTYPE toc
+  PUBLIC "-//Sun Microsystems Inc.//DTD JavaHelp TOC Version 1.0//EN"
+         "http://java.sun.com/products/javahelp/toc_1_0.dtd">
+
+<toc version="1.0">
+	<tocitem text="Início" target="Introducao"/>
+	
+	<tocitem text="Cadastro">
+		<tocitem text="Crianças (0 à 17 anos)" target="pacienteadulto"/>
+		<tocitem text="Adultos (acima de 17 anos)" target="pacientecrianca"/>
+	</tocitem>
+	<tocitem text="Carteirinha">
+		<tocitem text="Emitir Carteirinha" target="emitircarteirinha"/>
+	</tocitem>
+	<tocitem text="Consulta">
+		<tocitem text="Gerenciar Consultas" target="gerenciarconsultas"/>
+		<tocitem text="Listar Consultas" target="listarconsultas"/>
+	</tocitem>
+	<tocitem text="Pagamento">
+		<tocitem text="Efetuar pagamento" target="efetuarpagamento"/>
+	</tocitem>
+	<tocitem text="Sair">
+		<tocitem text="Efetuar Logoff" target="logoff"/>
+	</tocitem>
+
+</toc>
